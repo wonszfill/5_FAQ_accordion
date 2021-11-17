@@ -1,0 +1,142 @@
+html {
+
+    --gradient-a: hsl(273, 75%, 66%);
+    --gradient-b: hsl(240, 73%, 65%);
+
+    --divider-color: hsl(240, 5%, 91%);
+
+
+    --text-strong-dark: hsl(238, 29%, 16%);
+    --text-red: hsl(14, 88%, 65%);
+
+    --text-dark: hsl(237, 12%, 33%);
+    --text-soft: hsl(240, 6%, 50%);
+
+    margin:0;
+    padding:0;
+    height: 100%;
+    background: var(--gradient-b);
+    background: linear-gradient(var(--gradient-a), var(--gradient-b));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    color: var(--text-soft);
+}
+
+body {
+    margin:0;
+    padding:0;
+
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 95% auto;
+    grid-template-columns: 22px auto 22px;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        ". main ."
+        "footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.faq{
+    margin:0;
+    padding: 0 22px 50px;
+    border-radius: 20px;;
+    box-sizing: border-box;
+
+    background: #fff;
+}
+
+.faq__head{
+    background: url(/images/bg-pattern-mobile.svg) top center no-repeat;
+    text-align: center;
+    margin-bottom: -80px;
+    box-sizing: border-box;
+}
+
+.faq__head img{
+    width:230px;
+    position: relative;
+    bottom: 100px;
+}
+
+.faq__text > h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    color: var(--text-strong-dark)
+}
+
+
+.faq__question {
+    display: grid;
+    grid-template-columns: 19fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    grid-template-areas:
+    "question icon"
+    "anwser anwser" ;
+
+    border-bottom: 1px solid var(--divider-color);
+    box-sizing: border-box;
+    padding: 0.6em 0;
+}
+
+.faq__question > h2 {
+    grid-area: question;
+    margin: 0.8em 0;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--text-dark);
+}
+
+.faq__question > img {
+    grid-area: icon;
+    position: relative;
+    right:0;
+}
+
+.faq__question > p {
+    grid-area: anwser;
+    display: none;
+    letter-spacing: 0.2px;
+}
+.faq__question--active > h2 {
+    font-weight: 700;
+    color: var(--text-strong-dark);
+}
+
+.faq__question--active > img {
+    transform: rotate(180deg);
+}
+
+.faq__question--active > p {
+    display: initial;
+}
+
+/* attribution */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--text-red);
+}
+
+.attribution a { 
+    color: var(--text-strong-dark); 
+}
